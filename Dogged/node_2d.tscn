@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3o2d8a057cb1"]
+[gd_scene load_steps=11 format=3 uid="uid://c3o2d8a057cb1"]
 
-[ext_resource type="Script" path="res://Torso.gd" id="1_1q3by"]
 [ext_resource type="Texture2D" uid="uid://6kamcqdfk3uc" path="res://Resources/neck.png" id="1_7ew4x"]
 [ext_resource type="Script" path="res://node_2d.gd" id="1_jw86u"]
 [ext_resource type="Texture2D" uid="uid://ddhakik0nbnhj" path="res://Resources/head.png" id="2_t6dat"]
@@ -26,7 +25,6 @@ node_b = NodePath("../Torso/Neck")
 position = Vector2(583, 331)
 input_pickable = true
 gravity_scale = 0.0
-script = ExtResource("1_1q3by")
 
 [node name="PinNeckHead" type="PinJoint2D" parent="Torso"]
 position = Vector2(86, -76)
@@ -55,6 +53,7 @@ gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Neck/Head"]
 polygon = PackedVector2Array(129, 45, 139, 10, 80, -21, 49, -59, 19, -69, -8, -57, -41, -18, -32, 0, -1, 0)
+one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Torso/Neck/Head"]
 position = Vector2(34, -14)
@@ -66,6 +65,7 @@ gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Neck/Head/Ear"]
 polygon = PackedVector2Array(-8, 31, -30, 60, -43, 65, -50, 50, -45, 28, -8, -14, -1, 4)
+one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Torso/Neck/Head/Ear"]
 position = Vector2(12, 19)
@@ -185,7 +185,6 @@ gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/LegFrontR"]
 polygon = PackedVector2Array(4, 0, 56, 80, 50, 84, -1, 5)
-one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Torso/LegFrontR"]
 position = Vector2(-3, 20)
@@ -202,7 +201,6 @@ gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/LegFrontL"]
 polygon = PackedVector2Array(5, 1, 58, 84, 53, 89, -2, 4)
-one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Torso/LegFrontL"]
 position = Vector2(-1, 23)
@@ -215,4 +213,5 @@ position = Vector2(541, 513)
 position = Vector2(-1, 30)
 shape = SubResource("RectangleShape2D_lmoyf")
 
-[connection signal="input_event" from="Torso" to="Torso" method="_on_input_event"]
+[connection signal="input_event" from="Torso" to="." method="_on_torso_input_event"]
+[connection signal="input_event" from="Torso/Neck" to="." method="_on_neck_input_event"]
