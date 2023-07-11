@@ -1,0 +1,204 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3o2d8a057cb1"]
+
+[ext_resource type="Script" path="res://Torso.gd" id="1_1q3by"]
+[ext_resource type="Texture2D" uid="uid://6kamcqdfk3uc" path="res://Resources/neck.png" id="1_7ew4x"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_jw86u"]
+[ext_resource type="Texture2D" uid="uid://ddhakik0nbnhj" path="res://Resources/head.png" id="2_t6dat"]
+[ext_resource type="Texture2D" uid="uid://b0lfxskkminb1" path="res://Resources/ear.png" id="3_xupli"]
+[ext_resource type="Texture2D" uid="uid://bxicn2mu6fbq6" path="res://Resources/torso.png" id="4_f5dbf"]
+[ext_resource type="Texture2D" uid="uid://byq7mfh0xogoi" path="res://Resources/back.png" id="5_jwfbv"]
+[ext_resource type="Texture2D" uid="uid://b27352xoaw7t8" path="res://Resources/legback.png" id="6_wirpk"]
+[ext_resource type="Texture2D" uid="uid://bky20pvg324js" path="res://Resources/tailsection.png" id="7_xd82i"]
+[ext_resource type="Texture2D" uid="uid://dxas1i2y6yoys" path="res://Resources/legfront.png" id="8_n8xtj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmoyf"]
+size = Vector2(719, 20)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jw86u")
+
+[node name="PinTorsoNeck" type="PinJoint2D" parent="."]
+position = Vector2(630, 299)
+node_a = NodePath("../Torso")
+node_b = NodePath("../Torso/Neck")
+
+[node name="Torso" type="RigidBody2D" parent="."]
+position = Vector2(583, 331)
+input_pickable = true
+script = ExtResource("1_1q3by")
+
+[node name="PinNeckHead" type="PinJoint2D" parent="Torso"]
+position = Vector2(86, -76)
+node_a = NodePath("../Neck")
+node_b = NodePath("../Neck/Head")
+
+[node name="Neck" type="RigidBody2D" parent="Torso"]
+position = Vector2(47, -32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Neck"]
+polygon = PackedVector2Array(35, -43, -3, -2, 2, 3, 40, -39)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Neck"]
+position = Vector2(-7, 2)
+texture = ExtResource("1_7ew4x")
+
+[node name="PinHeadEar" type="PinJoint2D" parent="Torso/Neck"]
+position = Vector2(44, -92)
+node_a = NodePath("../Head")
+node_b = NodePath("../Head/Ear")
+
+[node name="Head" type="RigidBody2D" parent="Torso/Neck"]
+position = Vector2(39, -44)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Neck/Head"]
+polygon = PackedVector2Array(129, 45, 139, 10, 80, -21, 49, -59, 19, -69, -8, -57, -41, -18, -32, 0, -1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Neck/Head"]
+position = Vector2(34, -14)
+texture = ExtResource("2_t6dat")
+
+[node name="Ear" type="RigidBody2D" parent="Torso/Neck/Head"]
+position = Vector2(5, -48)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Neck/Head/Ear"]
+polygon = PackedVector2Array(-8, 31, -30, 60, -43, 65, -50, 50, -45, 28, -8, -14, -1, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Neck/Head/Ear"]
+position = Vector2(12, 19)
+texture = ExtResource("3_xupli")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso"]
+polygon = PackedVector2Array(9, -38, -37, -32, -66, -9, -57, 19, -4, 39, 55, 26, 67, -3, 46, -29)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso"]
+position = Vector2(-48, -4)
+texture = ExtResource("4_f5dbf")
+
+[node name="PinTorsoBack" type="PinJoint2D" parent="Torso"]
+position = Vector2(-61, -16)
+node_a = NodePath("..")
+node_b = NodePath("../Back")
+
+[node name="Back" type="RigidBody2D" parent="Torso"]
+position = Vector2(-61, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Back"]
+polygon = PackedVector2Array(-8, -7, -78, 0, -104, 26, -98, 39, -16, 41, 20, 22, 25, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Back"]
+position = Vector2(-6, 17)
+texture = ExtResource("5_jwfbv")
+
+[node name="PinBackLegR" type="PinJoint2D" parent="Torso/Back"]
+position = Vector2(-79, 42)
+node_a = NodePath("..")
+node_b = NodePath("../LegBackR")
+
+[node name="LegBackR" type="RigidBody2D" parent="Torso/Back"]
+position = Vector2(-79, 42)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Back/LegBackR"]
+polygon = PackedVector2Array(-1, 4, -44, 80, -51, 81, -31, 39, -8, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Back/LegBackR"]
+position = Vector2(35, -6)
+texture = ExtResource("6_wirpk")
+
+[node name="PinBackLegL" type="PinJoint2D" parent="Torso/Back"]
+position = Vector2(-105, 25)
+node_a = NodePath("..")
+node_b = NodePath("../LegBackL")
+
+[node name="LegBackL" type="RigidBody2D" parent="Torso/Back"]
+position = Vector2(-105, 25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Back/LegBackL"]
+polygon = PackedVector2Array(1, 5, -43, 81, -49, 77, -23, 29, -3, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Back/LegBackL"]
+position = Vector2(38, -5)
+texture = ExtResource("6_wirpk")
+
+[node name="PinBackTail1" type="PinJoint2D" parent="Torso/Back"]
+position = Vector2(-96, 10)
+node_a = NodePath("..")
+node_b = NodePath("../TailSection1")
+
+[node name="TailSection1" type="RigidBody2D" parent="Torso/Back"]
+position = Vector2(-96, 10)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Back/TailSection1"]
+polygon = PackedVector2Array(-2, 2, -24, -23, -17, -26, 1, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Back/TailSection1"]
+position = Vector2(-3, -17)
+texture = ExtResource("7_xd82i")
+
+[node name="PinTail1Tail2" type="PinJoint2D" parent="Torso/Back/TailSection1"]
+position = Vector2(-22, -29)
+node_a = NodePath("..")
+node_b = NodePath("../TailSection2")
+
+[node name="TailSection2" type="RigidBody2D" parent="Torso/Back/TailSection1"]
+position = Vector2(-22, -29)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Back/TailSection1/TailSection2"]
+polygon = PackedVector2Array(-3, 3, -22, -17, -16, -23, 0, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Back/TailSection1/TailSection2"]
+position = Vector2(-3, -15)
+texture = ExtResource("7_xd82i")
+
+[node name="PinTail2Tail3" type="PinJoint2D" parent="Torso/Back/TailSection1/TailSection2"]
+position = Vector2(-21, -22)
+node_a = NodePath("..")
+node_b = NodePath("../TailSection3")
+
+[node name="TailSection3" type="RigidBody2D" parent="Torso/Back/TailSection1/TailSection2"]
+position = Vector2(-21, -22)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/Back/TailSection1/TailSection2/TailSection3"]
+polygon = PackedVector2Array(-5, 0, -27, -27, -21, -31, 1, -7)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/Back/TailSection1/TailSection2/TailSection3"]
+position = Vector2(-3, -18)
+texture = ExtResource("7_xd82i")
+
+[node name="PinTorsoLegR" type="PinJoint2D" parent="Torso"]
+position = Vector2(61, 18)
+node_a = NodePath("..")
+node_b = NodePath("../LegFrontR")
+
+[node name="LegFrontR" type="RigidBody2D" parent="Torso"]
+position = Vector2(61, 18)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/LegFrontR"]
+polygon = PackedVector2Array(4, 0, 56, 80, 50, 84, -1, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/LegFrontR"]
+position = Vector2(-3, 20)
+texture = ExtResource("8_n8xtj")
+
+[node name="PinTorsoLegL" type="PinJoint2D" parent="Torso"]
+position = Vector2(32, 34)
+node_a = NodePath("..")
+node_b = NodePath("../LegFrontL")
+
+[node name="LegFrontL" type="RigidBody2D" parent="Torso"]
+position = Vector2(32, 34)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Torso/LegFrontL"]
+polygon = PackedVector2Array(5, 1, 58, 84, 53, 89, -2, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Torso/LegFrontL"]
+position = Vector2(-1, 23)
+texture = ExtResource("8_n8xtj")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(541, 513)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(-1, 30)
+shape = SubResource("RectangleShape2D_lmoyf")
+
+[connection signal="input_event" from="Torso" to="Torso" method="_on_input_event"]
