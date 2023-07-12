@@ -14,7 +14,7 @@
 script = ExtResource("1_jw86u")
 
 [node name="Torso" type="Node2D" parent="."]
-position = Vector2(850, 409)
+position = Vector2(583, 331)
 
 [node name="Neck" type="Node2D" parent="Torso"]
 position = Vector2(47, -32)
@@ -94,90 +94,5 @@ texture = ExtResource("8_n8xtj")
 position = Vector2(32, 34)
 
 [node name="Sprite2D" type="Sprite2D" parent="Torso/LegFrontL"]
-position = Vector2(-1, 23)
-texture = ExtResource("8_n8xtj")
-
-[node name="PoseTorso" type="Node2D" parent="."]
-position = Vector2(303, 225)
-scale = Vector2(0.9, 0.9)
-
-[node name="Neck" type="Node2D" parent="PoseTorso"]
-position = Vector2(47, -32)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Neck"]
-position = Vector2(-7, 2)
-texture = ExtResource("1_7ew4x")
-
-[node name="Head" type="Node2D" parent="PoseTorso/Neck"]
-position = Vector2(39, -44)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Neck/Head"]
-position = Vector2(34, -14)
-texture = ExtResource("2_t6dat")
-
-[node name="Ear" type="Node2D" parent="PoseTorso/Neck/Head"]
-position = Vector2(5, -48)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Neck/Head/Ear"]
-position = Vector2(12, 19)
-texture = ExtResource("3_xupli")
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso"]
-position = Vector2(-48, -4)
-texture = ExtResource("4_f5dbf")
-
-[node name="Back" type="Node2D" parent="PoseTorso"]
-position = Vector2(-61, -16)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Back"]
-position = Vector2(-6, 17)
-texture = ExtResource("5_jwfbv")
-
-[node name="LegBackR" type="Node2D" parent="PoseTorso/Back"]
-position = Vector2(-79, 42)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Back/LegBackR"]
-position = Vector2(35, -6)
-texture = ExtResource("6_wirpk")
-
-[node name="LegBackL" type="Node2D" parent="PoseTorso/Back"]
-position = Vector2(-105, 25)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Back/LegBackL"]
-position = Vector2(38, -5)
-texture = ExtResource("6_wirpk")
-
-[node name="TailSection1" type="Node2D" parent="PoseTorso/Back"]
-position = Vector2(-96, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Back/TailSection1"]
-position = Vector2(-3, -17)
-texture = ExtResource("7_xd82i")
-
-[node name="TailSection2" type="Node2D" parent="PoseTorso/Back/TailSection1"]
-position = Vector2(-22, -29)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Back/TailSection1/TailSection2"]
-position = Vector2(-3, -15)
-texture = ExtResource("7_xd82i")
-
-[node name="TailSection3" type="Node2D" parent="PoseTorso/Back/TailSection1/TailSection2"]
-position = Vector2(-21, -22)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/Back/TailSection1/TailSection2/TailSection3"]
-position = Vector2(-3, -18)
-texture = ExtResource("7_xd82i")
-
-[node name="LegFrontR" type="Node2D" parent="PoseTorso"]
-position = Vector2(61, 18)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/LegFrontR"]
-position = Vector2(-3, 20)
-texture = ExtResource("8_n8xtj")
-
-[node name="LegFrontL" type="Node2D" parent="PoseTorso"]
-position = Vector2(32, 34)
-
-[node name="Sprite2D" type="Sprite2D" parent="PoseTorso/LegFrontL"]
 position = Vector2(-1, 23)
 texture = ExtResource("8_n8xtj")
