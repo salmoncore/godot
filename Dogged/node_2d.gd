@@ -16,7 +16,7 @@ var jointScores = [0,0,0,0,0,0,0,0,0,0,0,0]
 var scoreTotal = 0
 var colorArray = [0,0,0]
 var colorHighlightArray = [0,0,0]
-var contestantNum = 1
+var contestantNum = 0
 var timerSecs = 90
 
 # 0 for intro, 1 for randomizer, 2 for posing, 3 for player control, 4 for score
@@ -30,6 +30,7 @@ func _process(delta):
     
     if gameState == 0:
         if Input.is_action_just_pressed("key_confirm"):
+            contestantNum += 1
             gameState = 1
     
     if gameState == 1:
@@ -54,6 +55,7 @@ func _process(delta):
         $TextContainer/LabelInfo.text = String("Contestant %d's score:" % contestantNum)
         $TextContainer/LabelTime.text = String("%d" % scoreTotal)
         if Input.is_action_just_pressed("key_confirm"):
+            colorRandomizer()
             resetGrade()
             gameState = 0
     
