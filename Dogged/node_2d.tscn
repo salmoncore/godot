@@ -69,10 +69,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelLBSign" type="Label" parent="TextContainer"]
-offset_left = 93.0
-offset_top = 303.0
-offset_right = 405.0
-offset_bottom = 359.0
+offset_left = 91.0
+offset_top = 346.0
+offset_right = 403.0
+offset_bottom = 402.0
 text = "CHAMPIONS (Lower is better)"
 label_settings = SubResource("LabelSettings_3w2uu")
 horizontal_alignment = 1
@@ -99,12 +99,268 @@ Enter/Xbox ≡/Nintendo + to confirm pose!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelLeaderBoard" type="Label" parent="TextContainer"]
+[node name="LeaderBoard" type="Control" parent="TextContainer"]
+anchors_preset = 0
 offset_left = 93.0
 offset_top = 359.0
-offset_right = 403.0
-offset_bottom = 633.0
+offset_right = 133.0
+offset_bottom = 399.0
+
+[node name="LBContestant0" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 33.0
+offset_right = 125.0
+offset_bottom = 64.0
 label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBContestant1" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 64.0
+offset_right = 125.0
+offset_bottom = 95.0
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBContestant2" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 94.0
+offset_right = 125.0
+offset_bottom = 125.0
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBContestant3" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 124.0
+offset_right = 125.0
+offset_bottom = 155.0
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBContestant4" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 153.0
+offset_right = 125.0
+offset_bottom = 184.0
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBContestant5" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 183.0
+offset_right = 125.0
+offset_bottom = 214.0
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBContestant6" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 213.0
+offset_right = 125.0
+offset_bottom = 244.0
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBContestant7" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 18.0
+offset_top = 244.0
+offset_right = 125.0
+offset_bottom = 275.0
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon0" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 33.0
+offset_right = 287.0
+offset_bottom = 64.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon1" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 64.0
+offset_right = 287.0
+offset_bottom = 95.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon2" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 94.0
+offset_right = 287.0
+offset_bottom = 125.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon3" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 124.0
+offset_right = 287.0
+offset_bottom = 155.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon4" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 153.0
+offset_right = 287.0
+offset_bottom = 184.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon5" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 183.0
+offset_right = 287.0
+offset_bottom = 214.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon6" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 213.0
+offset_right = 287.0
+offset_bottom = 244.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBColon7" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 180.0
+offset_top = 244.0
+offset_right = 287.0
+offset_bottom = 275.0
+text = "
+"
+label_settings = SubResource("LabelSettings_8u1hq")
+
+[node name="LBID0" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 33.0
+offset_right = 206.0
+offset_bottom = 64.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBID1" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 64.0
+offset_right = 206.0
+offset_bottom = 95.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBID2" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 94.0
+offset_right = 206.0
+offset_bottom = 125.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBID3" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 124.0
+offset_right = 206.0
+offset_bottom = 155.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBID4" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 153.0
+offset_right = 206.0
+offset_bottom = 184.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBID5" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 183.0
+offset_right = 206.0
+offset_bottom = 214.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBID6" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 213.0
+offset_right = 206.0
+offset_bottom = 244.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBID7" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 99.0
+offset_top = 244.0
+offset_right = 206.0
+offset_bottom = 275.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore0" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 33.0
+offset_right = 278.0
+offset_bottom = 64.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore1" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 64.0
+offset_right = 278.0
+offset_bottom = 95.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore2" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 94.0
+offset_right = 278.0
+offset_bottom = 125.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore3" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 124.0
+offset_right = 278.0
+offset_bottom = 155.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore4" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 153.0
+offset_right = 278.0
+offset_bottom = 184.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore5" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 183.0
+offset_right = 278.0
+offset_bottom = 214.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore6" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 213.0
+offset_right = 278.0
+offset_bottom = 244.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
+
+[node name="LBScore7" type="Label" parent="TextContainer/LeaderBoard"]
+offset_left = 171.0
+offset_top = 244.0
+offset_right = 278.0
+offset_bottom = 275.0
+label_settings = SubResource("LabelSettings_8u1hq")
+horizontal_alignment = 1
 
 [node name="Torso" type="Node2D" parent="."]
 position = Vector2(850, 409)
@@ -274,3 +530,9 @@ position = Vector2(32, 34)
 [node name="Sprite2D" type="Sprite2D" parent="PoseTorso/LegFrontL"]
 position = Vector2(-1, 23)
 texture = ExtResource("8_n8xtj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
