@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3o2d8a057cb1"]
+[gd_scene load_steps=11 format=3 uid="uid://c3o2d8a057cb1"]
 
 [ext_resource type="Texture2D" uid="uid://6kamcqdfk3uc" path="res://Resources/neck.png" id="1_7ew4x"]
 [ext_resource type="Script" path="res://node_2d.gd" id="1_jw86u"]
+[ext_resource type="Texture2D" uid="uid://c4qoqn8c6a868" path="res://Resources/stage.png" id="2_3e631"]
 [ext_resource type="Texture2D" uid="uid://ddhakik0nbnhj" path="res://Resources/head.png" id="2_t6dat"]
 [ext_resource type="Texture2D" uid="uid://b0lfxskkminb1" path="res://Resources/ear.png" id="3_xupli"]
 [ext_resource type="Texture2D" uid="uid://bxicn2mu6fbq6" path="res://Resources/torso.png" id="4_f5dbf"]
@@ -12,6 +13,11 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jw86u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 325)
+scale = Vector2(1.00434, 1.00926)
+texture = ExtResource("2_3e631")
 
 [node name="Torso" type="Node2D" parent="."]
 position = Vector2(850, 409)

@@ -15,25 +15,23 @@ var posePositions = [0,0,0,0,0,0,0,0,0,0,0,0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
-	
-	selectNode = get_node("Torso")
-	selectSprite = get_node(partArray[partIndex] + "/Sprite2D")
-	
-	for i in range(12):
-		# Colors pose dog a tan-y? color? ?
-		poseNode = get_node(poseArray[i])
-		poseSprite = get_node(poseArray[i] + "/Sprite2D")
-		poseSprite.modulate = Color(15,5,.5)
-		# Randomly rotates the dog's joints
-		posePositions[i] = randi() % 360
-		
+	# Poses the dog
+	poseRandomizer()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	# Poses the dog
 	dogPoser()
+	
+	# Reset function
+	if Input.is_action_just_pressed("key_confirm"):
+		for i in range(12):
+			selectNode = get_node(partArray[i])
+			poseNode = get_node(poseArray[i])
+			selectNode.rotation_degrees = 0
+			poseNode.rotation_degrees = 0
+		poseRandomizer()
+		dogPoser()
 	
 	# Handle input for part selection
 	if Input.is_action_just_pressed("key_up"):
@@ -62,11 +60,33 @@ func _process(delta):
 		if Input.is_action_pressed("key_left"):
 			selectNode.rotation_degrees -= 1
 
+func poseRandomizer():
+	randomize()
+	
+	selectNode = get_node("Torso")
+	selectSprite = get_node(partArray[partIndex] + "/Sprite2D")
+	
+	for i in range(12):
+		# Colors pose dog a tan-y? color? ?
+		poseNode = get_node(poseArray[i])
+		poseSprite = get_node(poseArray[i] + "/Sprite2D")
+		poseSprite.modulate = Color(15,5,.5)
+		# Randomly rotates the dog's joints
+		posePositions[i] = randi() % 360
+
 func dogPoser():
 	for i in range(12):
 		poseNode = get_node(poseArray[i])
 		if poseNode.rotation_degrees < posePositions[i]:
-			print(poseNode.rotation_degrees)
-			poseNode.rotation_degrees += .1
+			poseNode.rotation_degrees += .2
 		if poseNode.rotation_degrees > 360:
 			poseNode.rotation_degrees = 0
+
+#func dogGrader():
+
+## Todo
+# - clock
+# - dogGrader
+# - reformat for restarting game
+# - randomized dog colors
+# - leaderboard
