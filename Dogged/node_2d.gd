@@ -12,6 +12,8 @@ var poseArray = ["PoseTorso", "PoseTorso/Neck", "PoseTorso/Neck/Head", "PoseTors
 				 "PoseTorso/Back/TailSection1/TailSection2/TailSection3", "PoseTorso/LegFrontR", "PoseTorso/LegFrontL"]
 var partIndex = 0
 var posePositions = [0,0,0,0,0,0,0,0,0,0,0,0]
+var jointScores = [0,0,0,0,0,0,0,0,0,0,0,0]
+var scoreTotal = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,13 +27,14 @@ func _process(delta):
 	
 	# Reset function
 	if Input.is_action_just_pressed("key_confirm"):
-		for i in range(12):
-			selectNode = get_node(partArray[i])
-			poseNode = get_node(poseArray[i])
-			selectNode.rotation_degrees = 0
-			poseNode.rotation_degrees = 0
-		poseRandomizer()
-		dogPoser()
+		dogGrader()
+#		for i in range(12):
+#			selectNode = get_node(partArray[i])
+#			poseNode = get_node(poseArray[i])
+#			selectNode.rotation_degrees = 0
+#			poseNode.rotation_degrees = 0
+#		poseRandomizer()
+#		dogPoser()
 	
 	# Handle input for part selection
 	if Input.is_action_just_pressed("key_up"):
@@ -82,11 +85,29 @@ func dogPoser():
 		if poseNode.rotation_degrees > 360:
 			poseNode.rotation_degrees = 0
 
-#func dogGrader():
+func dogGrader():
+	for i in range(12):
+		selectNode = get_node(partArray[i])
+		poseNode = get_node(poseArray[i])
+		jointScores[i] =  angleDist(int(poseNode.rotation_degrees), int(selectNode.rotation_degrees))
+		scoreTotal += jointScores[i]
+		print(i , ": " , jointScores[i])
+	print(scoreTotal)
+	resetGrade()
+
+func resetGrade():
+	for i in range(12):
+		jointScores[i] = 0
+		scoreTotal = 0
+	print("Score Reset")
+
+func angleDist(angle1, angle2):
+	var diff = abs(angle1 - angle2) % 360
+	if diff > 180:
+		diff = 360 - diff
+	return diff
 
 ## Todo
 # - clock
-# - dogGrader
-# - reformat for restarting game
 # - randomized dog colors
 # - leaderboard
