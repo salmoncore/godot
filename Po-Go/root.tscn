@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://duekgreef6qhc"]
+
+[ext_resource type="Script" path="res://root.gd" id="1_v7xxn"]
+[ext_resource type="Texture2D" uid="uid://ctaawwakqy0vg" path="res://Resources/floory.png" id="1_x8wqg"]
+[ext_resource type="Texture2D" uid="uid://dxa5r3heu5odc" path="res://Resources/pogo.png" id="2_cn8pg"]
+[ext_resource type="Script" path="res://Player.gd" id="3_cbr3e"]
+[ext_resource type="Texture2D" uid="uid://cpwd3asikaddl" path="res://Resources/stick.png" id="3_i54k3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70qun"]
+size = Vector2(128, 8)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y7tgs"]
+radius = 5.0
+height = 86.0
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_v7xxn")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="World"]
+position = Vector2(651, 517)
+scale = Vector2(10, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor"]
+shape = SubResource("RectangleShape2D_70qun")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Floor"]
+texture_filter = 1
+position = Vector2(0, -20)
+texture = ExtResource("1_x8wqg")
+
+[node name="Floor2" type="StaticBody2D" parent="World"]
+position = Vector2(1361, 1418)
+scale = Vector2(102, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor2"]
+shape = SubResource("RectangleShape2D_70qun")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Floor2"]
+texture_filter = 1
+position = Vector2(0, -20)
+texture = ExtResource("1_x8wqg")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(572, 163)
+script = ExtResource("3_cbr3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 13)
+shape = SubResource("CapsuleShape2D_y7tgs")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="StickSprite" type="Sprite2D" parent="Player"]
+texture_filter = 1
+texture = ExtResource("3_i54k3")
+
+[node name="PogoSprite" type="Sprite2D" parent="Player"]
+texture_filter = 1
+texture = ExtResource("2_cn8pg")
+
+[node name="Camera" type="Camera2D" parent="."]
+visible = false
