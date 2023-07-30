@@ -25,11 +25,11 @@ func _process(delta):
 		zoomIn()
 	
 func zoomIn():
-	zoom = zoom + ZOOM_INCREMENT
+	zoom = zoom + (ZOOM_INCREMENT * 3)
 	zoomSet()
 	
 func zoomOut():
-	zoom = zoom - ZOOM_INCREMENT
+	zoom = zoom - (ZOOM_INCREMENT)
 	zoomSet()
 	
 func playerVelocity():
