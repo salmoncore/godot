@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cci0llgnuf41e"]
+[gd_scene load_steps=15 format=3 uid="uid://cci0llgnuf41e"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_fi2l3"]
 [ext_resource type="PackedScene" uid="uid://bljebhjf4qt0l" path="res://scenes/player.tscn" id="1_iwv3d"]
 [ext_resource type="Texture2D" uid="uid://bdvgouuidbu6e" path="res://assets/sprites/world_tileset.png" id="2_bq16q"]
 [ext_resource type="PackedScene" uid="uid://toj0o6t3cysh" path="res://scenes/platform.tscn" id="3_23wnj"]
 [ext_resource type="PackedScene" uid="uid://bikkkwdyckcrk" path="res://scenes/coin.tscn" id="4_exgsx"]
 [ext_resource type="PackedScene" uid="uid://coq4v4ikmgdrb" path="res://scenes/killzone.tscn" id="5_p6rmo"]
 [ext_resource type="PackedScene" uid="uid://det24xowcxaky" path="res://scenes/slime.tscn" id="6_51awe"]
+[ext_resource type="FontFile" uid="uid://bbuhxl4o1mv41" path="res://assets/fonts/PixelOperator8.ttf" id="7_8m3gr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s32qt"]
 texture = ExtResource("2_bq16q")
@@ -453,6 +455,10 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_fi2l3")
+
 [node name="Player" parent="." instance=ExtResource("1_iwv3d")]
 position = Vector2(0, -6)
 
@@ -523,3 +529,25 @@ shape = SubResource("WorldBoundaryShape2D_gderq")
 
 [node name="Slime" parent="." instance=ExtResource("6_51awe")]
 position = Vector2(504, 32)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 460.0
+offset_top = -12.0
+offset_right = 624.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_8m3gr")
+theme_override_font_sizes/font_size = 8
+text = "the evil mischevious slime"
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -135.0
+offset_top = -14.0
+offset_right = -49.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_8m3gr")
+theme_override_font_sizes/font_size = 8
+text = "space to jump"
