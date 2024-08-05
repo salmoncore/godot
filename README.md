@@ -1,9 +1,8 @@
 # Godot Sandbox
 
-following tutorials, makin' silly stuff. mind the mess!
+## Directory
+**Hour One**
+Made in under one hour as an excercise.
 
-## Original Projects
-- Hour One
-   - Made in under one hour as an excercise in the basics
-- Dogged On
-   - Try to get the high score of 0!
+**Dogged On**
+Try to get the high score of 0!
