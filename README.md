@@ -2,7 +2,7 @@
 
 ## Directory
 **Hour One**
-Made in under one hour as an excercise.
+ - Applying what I could learn in an hour.
 
 **Dogged On**
-Try to get the high score of 0!
+ - Try to get the high score of 0!
